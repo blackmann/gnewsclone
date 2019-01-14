@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
     return base.copyWith(
       brightness: Brightness.light,
       primaryColor: Colors.white,
+      accentColor: Colors.blueAccent,
       iconTheme: base.iconTheme.copyWith(
         color: Colors.grey
       ),
