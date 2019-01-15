@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
       brightness: Brightness.light,
       primaryColor: Colors.white,
       accentColor: Colors.blueAccent,
+      splashColor: Colors.blueAccent.withAlpha(40),
       iconTheme: base.iconTheme.copyWith(
         color: Colors.grey
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gnewsclone/widgets/circle_image.dart';
+import 'package:gnewsclone/widgets/brand_logo.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -36,22 +37,7 @@ class HomeState extends State<Home> {
               color: Theme.of(context).iconTheme.color,
             ),
           ),
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Image.asset("assets/images/glogo.png", width: 70),
-              SizedBox(
-                width: 5,
-              ),
-              Text(
-                "News",
-                style: Theme.of(context)
-                    .textTheme
-                    .title
-                    .copyWith(color: Colors.blueGrey),
-              )
-            ],
-          ),
+          title: Logo(),
           actions: <Widget>[
             Padding(
               padding: EdgeInsets.fromLTRB(10, 10, 24, 10),
