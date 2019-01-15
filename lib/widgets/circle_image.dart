@@ -6,25 +6,18 @@ class CircleImage extends StatelessWidget {
     this.radius = 10,
   });
 
-  final int radius;
+  final double radius;
   final ImageProvider imageProvider;
 
   @override
   Widget build(BuildContext context) {
-    double width = (radius * 2).toDouble();
-
-    return Column(
+    // wrapped around a column so that the avatar doesn't stretch
+    return Column( 
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Container(
-          width: width,
-          height: width,
-          decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                image: imageProvider,
-                fit: BoxFit.fill,
-              )),
+        CircleAvatar(
+          radius: radius,
+          backgroundImage: imageProvider,
         )
       ],
     );
