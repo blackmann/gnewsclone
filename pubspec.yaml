@@ -15,10 +15,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  
+  flutter_svg: 0.10.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.2
+  # cupertino_icons: ^0.1.2
 
 dev_dependencies:
   flutter_test:
@@ -42,6 +44,7 @@ flutter:
   #  - images/a_dot_ham.jpeg
   assets:
     - assets/images/glogo.png
+    - assets/icons/partly-sunny.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
@@ -72,3 +75,5 @@ flutter:
     - family: "Product Sans"
       fonts:
         - asset: assets/fonts/Product-Sans-Regular.ttf
+        - asset: assets/fonts/Product-Sans-Medium.ttf
+          weight: 600

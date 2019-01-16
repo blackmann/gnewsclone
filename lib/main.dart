@@ -17,8 +17,13 @@ class MyApp extends StatelessWidget {
         color: Colors.grey
       ),
       textTheme: base.textTheme.copyWith(
-        title: base.textTheme.title.apply(
-          fontFamily: 'Product Sans'
+        title: base.textTheme.title.copyWith(
+          fontFamily: 'Product Sans',
+          fontWeight: FontWeight.w600
+        ),
+        subtitle: base.textTheme.subtitle.copyWith(
+          color: Colors.grey,
+          fontWeight: FontWeight.normal,
         )
       )
     );

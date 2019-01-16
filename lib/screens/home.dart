@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gnewsclone/widgets/circle_image.dart';
-import 'package:gnewsclone/widgets/brand_logo.dart';
+import 'package:gnewsclone/pages/for_you_page.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -37,7 +37,7 @@ class HomeState extends State<Home> {
               color: Theme.of(context).iconTheme.color,
             ),
           ),
-          title: Logo(),
+          title: Image.asset("assets/images/glogo.png", height: 25,),
           actions: <Widget>[
             Padding(
               padding: EdgeInsets.fromLTRB(10, 10, 24, 10),
@@ -89,6 +89,8 @@ class HomeState extends State<Home> {
                   ))
             ],
           ),
-        ));
+        ),
+        body: ForYou(),
+        );
   }
 }
