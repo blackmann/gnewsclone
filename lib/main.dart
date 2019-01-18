@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'screens/home.dart';
+import 'package:flutter/services.dart';
+import 'ui/screens/home.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,11 +20,13 @@ class MyApp extends StatelessWidget {
       textTheme: base.textTheme.copyWith(
         title: base.textTheme.title.copyWith(
           fontFamily: 'Product Sans',
-          fontWeight: FontWeight.w600
+          fontWeight: FontWeight.w600,
+          fontSize: 18
         ),
         subtitle: base.textTheme.subtitle.copyWith(
           color: Colors.grey,
-          fontWeight: FontWeight.normal,
+          fontSize: 15,
+          fontWeight: FontWeight.normal
         )
       )
     );

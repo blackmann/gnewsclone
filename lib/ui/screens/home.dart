@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gnewsclone/widgets/circle_image.dart';
-import 'package:gnewsclone/pages/for_you_page.dart';
+import 'package:gnewsclone/ui/widgets/circle_image.dart';
+import 'package:gnewsclone/ui/pages/for_you_page.dart';
 
 class Home extends StatefulWidget {
   @override
