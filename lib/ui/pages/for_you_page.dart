@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gnewsclone/ui/widgets/welcome.dart';
 import 'package:gnewsclone/ui/widgets/top_story.dart';
+import 'package:gnewsclone/ui/widgets/regular_story.dart';
 
 import 'package:gnewsclone/data/models.dart';
 import 'package:gnewsclone/data/bloc.dart';
@@ -37,9 +38,14 @@ class ForYouState extends State<ForYou> {
                   );
                 }
 
-                return TopStory(_articles[1], 1);
+                switch(index) {
+                  case 1:
+                    return TopStory(_articles[0], 1);
+                  default:
+                    return RegularStory(_articles[index-1], index);
+                }
               },
-              itemCount: 2,
+              itemCount: 6,
             );
             } else if (snapshot.hasError) {
               return Text("Failed to load");

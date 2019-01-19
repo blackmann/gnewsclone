@@ -1,3 +1,4 @@
+import 'package:timeago/timeago.dart' as timeago;
 
 class Source {
   Source(this.id, this.name);
@@ -23,6 +24,8 @@ class Article {
   DateTime publishedAt;
   String content;
 
+  String get timePast => timeago.format(publishedAt);
+
   static Article fromJson(jsonData) {
     Article _article = Article();
     _article.title = jsonData["title"];
@@ -30,6 +33,7 @@ class Article {
     _article.url = jsonData["url"];
     _article.urlToImage = jsonData["urlToImage"];
     _article.source = Source.fromJson(jsonData["source"]);
+    _article.publishedAt = DateTime.parse(jsonData["publishedAt"]);
 
     return _article;
   }

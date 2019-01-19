@@ -18,7 +18,7 @@ class Bloc {
     print("Fetching");
     String _sources = sources.join(",");
     String _endpoint =
-      "https://newsapi.org/v2/everything?q=flutter&apiKey=$apiKey";
+      "https://newsapi.org/v2/everything?q=phones&apiKey=$apiKey&pageSize=5";
 
     print(_endpoint);
     

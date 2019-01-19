@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gnewsclone/ui/widgets/story_extra.dart';
 import 'package:gnewsclone/data/models.dart';
 
 class TopStory extends StatelessWidget {
@@ -16,13 +17,6 @@ class TopStory extends StatelessWidget {
         color: Theme.of(context).accentColor,
         fontWeight: FontWeight.w600);
 
-    TextStyle _metaStyle = TextStyle(
-      fontSize: 12,
-      color: Colors.grey,
-    );
-
-    TextStyle _metaBoldStyle = _metaStyle.copyWith(fontWeight: FontWeight.bold);
-
     return Container(
       color: Colors.white,
       padding: EdgeInsets.all(16),
@@ -33,7 +27,7 @@ class TopStory extends StatelessWidget {
             decoration: BoxDecoration(
                 shape: BoxShape.rectangle,
                 image: DecorationImage(
-                    image: NetworkImage(article.urlToImage), fit: BoxFit.fill),
+                    image: NetworkImage(article.urlToImage), fit: BoxFit.cover),
                 borderRadius: BorderRadius.all(Radius.circular(8))),
           ),
           _verticalSpacing,
@@ -58,40 +52,11 @@ class TopStory extends StatelessWidget {
                           .copyWith(fontSize: 22),
                     ),
                     _verticalSpacing,
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[
-                        Text("For You", style: _metaBoldStyle),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 4),
-                          child:
-                              Text("∙", style: TextStyle(color: Colors.grey)),
-                        ),
-                        Expanded(
-                          child: Text("26 minutes ago", style: _metaStyle),
-                        ),
-                        SizedBox(
-                          child: IconButton(
-                            padding: EdgeInsets.all(0),
-                            icon: Image.asset("assets/icons/coverage.png",
-                                width: 20),
-                            onPressed: () {},
-                          ),
-                          width: 40,
-                          height: 20,
-                        ),
-                        SizedBox(
-                          child: IconButton(
-                            icon: Icon(Icons.more_vert, color: Colors.grey),
-                            onPressed: () {},
-                            iconSize: 20,
-                            padding: EdgeInsets.all(0),
-                          ),
-                          width: 20,
-                          height: 20,
-                        )
-                      ],
-                    )
+                    StoryExtra(
+                      leading: "For you",
+                      timeAgo: article.timePast,
+                      hasCoverage: true,
+                    ),
                   ],
                 ),
               )
